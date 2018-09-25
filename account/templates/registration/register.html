@@ -20,9 +20,7 @@
 
 <div class="fore">
     <form method="POST" action="{% url 'register' %}" class="for form-horizontal">
-        {% csrf_token %} {% if form.errors %}
-        <p>il y a des erreurs </p>
-        {% endif %}
+        {% csrf_token %} 
         <div class="form-group">
             <label class="control-label col-sm-2" for="prenom">Username:</label>
             <div class="col-sm-10">
@@ -42,6 +40,9 @@
                 {{ form.password2 }}
             </div>
         </div>
+        {% if form.errors %}
+        <p style="color:red">il y a des erreurs </p>
+        {% endif %}
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <input type="submit" value="Register" class="btn btn-success">

@@ -1,7 +1,11 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate,login
+# from .models import InscriptionForm
+
 # Create your views here.
+
+
 
 def index(request):
     return render(request, 'account/index.html')
@@ -18,7 +22,7 @@ def register(request):
 
             user = authenticate(username=username , password=password)
             login(request, user)
-            return redirect('index')
+            return redirect('show')
     else:
         form = UserCreationForm()
 
@@ -30,3 +34,17 @@ def register(request):
 #     if request.method == 'POST':
 #         logout(request)
 #         return  redirect('index')
+
+# def Inscription(request):
+#     form = InscriptionForm(request.POST)
+#     if form.is_valid():
+#         inscri = InscriptionForm()
+
+#         inscri.username = form.cleaned_data["username"]
+#         inscri.email = form.cleaned_data["email"]
+#         inscri.password1 = form.cleaned_data["password1"]
+#         inscri.telephone = form.cleaned_data["telephone"]
+
+#         inscri.save()
+
+#     return render(request, 'articles/inscription.html', {'form': form})
