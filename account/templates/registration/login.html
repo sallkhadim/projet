@@ -20,7 +20,9 @@
             </div>
         </div>
         {% if form.errors %}
-        <p style="color:red">Verifie les champs de saisi</p>
+        <div class="alert alert-danger col-sm-6" role="alert">
+            username ou password incorrect
+          </div>        
         {% endif %}
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

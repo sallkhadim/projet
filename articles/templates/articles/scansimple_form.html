@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block body %}
+<html>
+    <head>
+    <style>
+        
+        .test{
+            display:none
+        }
+
+    </style>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+       </head>
+
+    <div class="row">
+
+
+        <div class="container">
+                <h5 class="text-center">Scan System simple</h5>
+                <p>Entrer une adresse IP:</p>
+                <form  method="post">
+                        {% csrf_token %}
+                    <div class="form-group">
+                        {{ form }}
+                    </div>
+                    <input type="submit" id="ok" value="Scan" class="btn btn-outline-secondary">
+
+                </form>
+                <span class="test">
+                    <div class="span11">
+  
+                       <div class="progress progress-striped active">
+                           <div class="bar" style="width: 100%;"></div>
+                       </div>
+                       
+                    </div>
+                 </span>    
+        </div>
+    </div>
+    <script>
+            $( "#ok" ).click(function() {
+              $( "span:last-child" ).hide( "fast", function() {
+                // Use arguments.callee so we don't need a named function
+                $( this ).prev().hide( "fast", arguments.callee );
+              });
+            });
+            $( "#ok" ).click(function() {
+              $( "span" ).show( 2000 );
+            });
+            </script>
+
+
+{% endblock  %}
+</html>
+              

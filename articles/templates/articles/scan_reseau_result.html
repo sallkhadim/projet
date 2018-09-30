@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="row">
+    <h6 class="text-center">Les hôtes actifs du réseau {{target}} :</h6>
+    <div class="container resultat">
+          {% if erreur%}
+            <p style="color: blue !important;">{{erreur}}</p>
+          {% else %}
+              {% if resultat %}
+
+                  <table class="table table-dark table-striped text-light">
+                      <thead>
+                        <tr>
+                          <th scope="col">host</th>
+                          <th scope="col">etat</th>
+                          <th scope="col">nom</th>
+                          <th scope="col">adresse IPv4</th>
+                            <th scope="col">adresse MAC</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                      {% for host in resultat %}
+                        <tr>
+                          <td>{{ host.host  }}</td>
+                          <td>{{ host.state }}</td>
+                          <td>{{ host.hostname }}</td>
+                          <td>{{ host.adresseIPv4 }}</td>
+                            <td>{{ host.adresseMAC }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+
+
+              {% else %}
+                    <p style="color: red !important;">Veillez entrer une adresse réseau valide</p>
+              {% endif %}
+          {% endif %}
+
+
+    {% endblock %}
+
+
+
+
+

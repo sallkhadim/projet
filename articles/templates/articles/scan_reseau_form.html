@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% block body %}
+    <div class="row">
+    <div class="container">
+        <h5 class="text-center">Découverte Réseau</h5>
+        <p>Entrer une adresse réseau (adresse/masque):</p>
+
+            <form  method="post">
+                    {% csrf_token %}
+                <div class="form-group">
+                    {{ form }}
+                </div>
+                <input type="submit" value="Scan" class="btn btn-outline-secondary">
+
+            </form>
+    </div>
+
+{% endblock %}

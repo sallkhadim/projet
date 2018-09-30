@@ -15,13 +15,22 @@
             background-color: green;
             border-radius: 50%;
             display: inline-block;
-            }
+        }
+        .sp{
+            background-color:tan;
+            width: 10%;
+            height: 800%;
+            border-radius: 30%;
+        }
+        .spp{
+            height: 49%;
+        }
     
     </style>
 
-    <span class="container">
+    <span class="container ">
         {% if user.is_authenticated %}
-        <h3 class="username"><span class="dot"></span>   <span class="glyphicon glyphicon-user"> </span> {{ user.username }}</h3>
+        <h3 class="username "><span class="dot"></span>   <span class="glyphicon glyphicon-user"> </span> {{ user.username }}</h3>
         {% endif %} {% for articles in articles %}
     </span>
 

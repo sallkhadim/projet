@@ -17,11 +17,18 @@ class ArticlesForm(forms.Form):
     image = forms.FileField()
 
 
+class NmapScan(models.Model):
+    target = models.CharField(max_length=2048)
+
+    def _str__(self):
+        return self.target
+
 
 # class Blog(models.Model):
-#     titre = models.CharField(max_length=255)
-#     body = models.TextField()
+#     titre = models.CharField(max_length=255\#     body = models.TextField()
 #     image = models.ImageField(upload_to="photos/")
 
 #     def __str__(self):
 #         return self.titre
+
+

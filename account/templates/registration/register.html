@@ -41,11 +41,12 @@
             </div>
         </div>
         {% if form.errors %}
-        <p style="color:red">il y a des erreurs </p>
-        {% endif %}
+        <div class="alert alert-danger col-sm-6" role="alert">
+            verifiez les champs de saisi
+          </div>        {% endif %}
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <input type="submit" value="Register" class="btn btn-success">
+                <input type="submit" value="valider" class="btn btn-success">
             </div>
         </div>
     </form>

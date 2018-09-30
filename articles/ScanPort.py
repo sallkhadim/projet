@@ -42,7 +42,7 @@ class Test():
         write_file('directory/scanport.txt', get_nmap(' -F', host)) 
         write_file('directory/scanport.txt', get_nmap(' -sV', host)) 
         # write_file('directory/scanport.txt', get_nmap(' -O', host)) 
-
+        
     test1()
         
   

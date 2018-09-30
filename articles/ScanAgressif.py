@@ -23,7 +23,7 @@ class TestA():
         f.write(data)
         f.close()      
             
-    create_dir('directory') 
+    create_dir('articles/media') 
 
     def test1():   
         try:    
@@ -32,7 +32,7 @@ class TestA():
            sys.exit(1)  
         print(" Scann aggressif:\n")
         print(get_nmap('  -osscan-guess', host))   
-        write_file('directory/scanagressif.txt', get_nmap(' -osscan-guess', host)) 
+        write_file('articles/media/scanagressif.html', get_nmap(' -osscan-guess', host)) 
 
     test1()
         
