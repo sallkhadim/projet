@@ -62,7 +62,6 @@ def Apropos(request):
 def scan(request):
     # if this is a POST request we need to process the form data
     if request.method == 'POST':
-        # create a form instance and populate it with data from the request:
         res = ""
         target = ""
         erreur = ""
@@ -74,7 +73,7 @@ def scan(request):
             target = request.POST['target']
 
             try:
-                resultat = nmScan.scan(hosts=target, arguments='-O')
+                resultat = nmScan.scan(hosts=target, arguments='-sS -T5')
                 ports = resultat['scan'][target]['tcp']
                 res = []
                 i=1
@@ -106,7 +105,7 @@ def scanSimple(request):
             target = request.POST['target']
 
             try:
-                resultat = nmScan.scan(hosts=target, arguments='-sV')
+                resultat = nmScan.scan(hosts=target, arguments='-sS -sV -T5')
                 ports = resultat['scan'][target]['tcp']
                 res = []
                 i=1
@@ -138,7 +137,7 @@ def scanAgressif(request):
             target = request.POST['target']
 
             try:
-                resultat = nmScan.scan(hosts=target, arguments='-osscan-guess')
+                resultat = nmScan.scan(hosts=target, arguments='-sS -sV -T5')
                 ports = resultat['scan'][target]['tcp']
                 res = []
                 i=1
@@ -170,7 +169,7 @@ def scanReseau(request):
             print(form)
             target = request.POST['target']
             try:
-                result = nma.scan(hosts=target, arguments='-sP')
+                result = nma.scan(hosts=target, arguments='-sP -T5')
                 res = []
                 print(result)
                 hosts_list = [x for x in nma.all_hosts()]

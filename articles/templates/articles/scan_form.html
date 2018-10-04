@@ -1,21 +1,33 @@
 {% extends 'base.html' %}
 {% block body %}
+
+<html>
+    <head>
+        <style>
+        
+        </style>
+
+    <!------ Include the above in your HEAD tag ---------->
+       </head>
+<body>     
+
     <div class="row">
-
-
         <div class="container">
                 <h5 class="text-center">Scan de ports</h5>
                 <p>Entrer une adresse IP:</p>
                 <form  method="post">
                         {% csrf_token %}
-                    <div class="form-group">
+                       <div class="form-group">
                         {{ form }}
-                    </div>
-                    <input type="submit" value="Scan" class="btn btn-outline-secondary">
-
-                </form>
+                       </div>
+                    <input type="submit" value="Scan" class="btn btn-success">          
+                </form>            
         </div>
+                     
     </div>
 
 {% endblock  %}
+
+</body>  
+</html>
               

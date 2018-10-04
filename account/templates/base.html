@@ -97,23 +97,32 @@
                 </h4>        
             </div>
             <ul class="nav navbar-nav mr-auto">      
-                <li class="active"><a href="{% url 'show' %}"><span class="glyphicon glyphicon-home"> </span> Accueil</a></li>
-                {% if user.is_authenticated  %}
-                <li><a href="{% url 'scanReseau' %}">Scan Reseau</a></li>
-                <li>
-                <div class="dropdown">
-                    <p class="">Scan Systeme</p>
-                    <div class="dropdown-content">
-                      <a href="{% url 'scanSimple' %}">System et ports</a>
-                      <a href="{% url 'scanAgressif' %}">Scan agressif</a>
-                    </div>
-                </div>
-                </li>
-                <li><a href="{% url 'scan' %}">Scan Port</a></li>
-                <li><a href="{% url 'Apropos' %}">A propos</a></li>
-                <li style="margin-left: 550px"><a href="{% url 'logout' %}" style="color: white"><span class="glyphicon glyphicon-off"></span> Deconnexion</a></li>
+                <li class="active"><a href="{% url 'index' %}"><span class="glyphicon glyphicon-home"> </span> Accueil</a></li>
+                {% if user.is_authenticated   %}
+                    {% if user.username == "thiam" or user.username == "bamba"  %}
+
+                        <li><a href="{% url 'scanReseau' %}">Scan Reseau</a></li>
+                        <li>
+                        <div class="dropdown">
+                            <p class="">Scan Systeme</p>
+                            <div class="dropdown-content">
+                            <a href="{% url 'scanSimple' %}">System et ports</a>
+                            <a href="{% url 'scanAgressif' %}">Scan agressif</a>
+                            </div>
+                        </div>
+                        </li>
+                        <li><a href="{% url 'scan' %}">Scan Port</a></li>
+                        <!-- <li><a href="{% url 'Apropos' %}">A propos</a></li> -->
+
+                    {% endif %}
+                    <li><a href="{% url 'Apropos' %}">A propos</a></li>
+                    <li><a href="{% url 'show' %}" >Blog</a></li>
+
+                    <li style="position:absolute;right:0;"><a href="{% url 'logout' %}" style="color: white"><span class="glyphicon glyphicon-off"></span> Deconnexion</a></li>
                 {% else %}
                 <li><a href="{% url 'Apropos' %}">A propos</a></li>
+                <li><a href="{% url 'show' %}" >Blog</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
@@ -147,7 +156,7 @@
 <div class="main-footer">
         <div class="col-xs-4 col-md-4">
             <p>
-              Papa et Khadim
+              Papa et Khadim Ous
             </p>
         </div>
         <div class="col-xs-6 col-md-6">

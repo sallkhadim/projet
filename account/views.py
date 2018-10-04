@@ -23,10 +23,12 @@ def register(request):
             user = authenticate(username=username , password=password)
             login(request, user)
             return redirect('show')
+
     else:
         form = UserCreationForm()
 
     context = {'form' : form}
+   
     return render(request, 'registration/register.html', context)
 
 

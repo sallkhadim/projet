@@ -11,12 +11,14 @@
         {% else %}
       {% if resultat %}
 
-    <table id="tab" class="table table-dark table-striped text-light">
-        <thead>
-          <tr>
+    <table id="tab" class="table table-dark table-striped text-light" border="1">
+        <thead class="thead-dark">
+            <tr>
             <th scope="col">Port</th>
             <th scope="col">State</th>
             <th scope="col">name</th>
+            <th scope="col">product</th>
+            <th scope="col">Service</th>
           </tr>
         </thead>
 
@@ -26,6 +28,8 @@
             <td>{{ port.port }}</td>
             <td>{{ port.state }}</td>
             <td>{{ port.name }}</td>
+            <td>{{ port.product }}</td>
+              <td>{{ port.version }}</td>
           </tr>
         {% endfor %}
         </tbody>
