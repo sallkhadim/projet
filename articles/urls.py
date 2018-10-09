@@ -12,6 +12,7 @@ urlpatterns = [
     
     url(r"^pentestSys/$", views.pentestSys, name="pentestSys"),
     url(r"^pentestSys/collecte/$", views.collecte, name="collecte"),
+    url(r"^pentestSys/collecte/web$", views.pentestweb, name="pentestweb"),
     url(r"^pentestSys/collecte/scanPorts/$", views.scan, name="scan"),
     url(r"^pentestSys/collecte/scanPorts/osetport$", views.scanSimple, name="scanSimple"),
     url(r"^pentestSys/collecte/scanPorts/agressif$", views.scanAgressif, name="scanAgressif"),

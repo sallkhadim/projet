@@ -112,6 +112,7 @@
                         </div>
                         </li>
                         <li><a href="{% url 'scan' %}">Scan Port</a></li>
+                        <li><a href="{% url 'pentestweb' %}">Scan Web</a></li>
                         <!-- <li><a href="{% url 'Apropos' %}">A propos</a></li> -->
 
                     {% endif %}
@@ -131,7 +132,9 @@
             </ul>
         </div>
     </nav><br><br><br><br>
-    {% block body %} {% endblock %}
+    
+    {% block body %}
+     {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script type="text/javascript">
         anime.timeline({loop: true})

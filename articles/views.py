@@ -205,6 +205,9 @@ def pentestSys(request):
 def pentestWeb(request):
     return render(request, "articles/pentestWeb.html", {})
 
+def pentestweb(request):
+    return render(request, "articles/pentest_web.html", {})
+
 def collecte(request):
     col = "collecte d'informations"
     return render(request, "articles/collecte.html", {"col": col})
